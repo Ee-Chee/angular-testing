@@ -14,16 +14,22 @@
 
 ### Unit Testing (isolated)
 
-#### Component-signal input test
+#### Component- signal input test
 - see child-one spec
 
-#### Component-interactions test with mock service
+#### Component- interactions test with mock service
 - see child-one spec
 
-#### Component-interations test with template
+#### Component- interations test with template
 - see child-one spec
 
-#### Service-method test
+#### Service- method test
+- see example.service spec
+
+#### Service- mock api request test
+- see example.service spec
+
+#### Service- fake async test
 - see example.service spec
 
 

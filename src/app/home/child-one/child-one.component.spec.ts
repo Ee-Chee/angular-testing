@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ChildOneComponent } from './child-one.component';
 import { ExampleService } from '../../services/example.service';
 import { By } from '@angular/platform-browser';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ChildOneComponent', () => {
   let component: ChildOneComponent;
@@ -11,7 +12,7 @@ describe('ChildOneComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ChildOneComponent]
+      imports: [ChildOneComponent, HttpClientTestingModule]
     })
     .compileComponents();
     
@@ -25,7 +26,7 @@ describe('ChildOneComponent', () => {
     expect(component.firstName()).toEqual('unknown');
   });
 
-  it('should call service method on button click', () => {
+  it('should call service getLastName method on button click', () => {
     const mockLastName = 'mockLastName';
     const spy = spyOn(exampleService, 'getLastName').and.returnValue(mockLastName);
     component.getLastName();

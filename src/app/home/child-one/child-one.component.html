@@ -1,3 +1,16 @@
 <p>child-one works!</p>
-<p>test: {{firstName()}}</p>
-<button (click)="getLastName()">{{lastName}}</button>
+<p>
+    test: {{firstName()}}
+    <br>
+    <button (click)="getLastName()">{{lastName}}</button>
+</p>
+<p>
+    @for (item of entries; track item.id; let i = $index) {
+        <div>{{i + 1}} : {{ item.id }} : {{item.created_at}}</div>
+      } @empty {
+        <div>No entries</div>
+      }
+    <br>  
+    <button (click)="getSampleEntries()">Get Entries</button>
+</p>
+
