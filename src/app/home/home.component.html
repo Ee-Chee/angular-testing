@@ -1,2 +1,17 @@
-<p>home works!</p>
+<form [formGroup]="form">
+    <label>
+      First Name:
+      <input type="text" [formControl]="form.controls.firstName" >
+    </label>
+    <label>
+      Last Name:
+      <input type="text" [formControl]="form.controls.lastName">
+    </label>
+    <label>
+      Email:
+      <input type="text" [formControl]="form.controls.email">
+    </label>
+    <button type="submit" (click)="onSubmit()" [disabled]="form.invalid">Submit</button>
+</form>
+
 <app-child-one firstName="Ee-Chee"></app-child-one>

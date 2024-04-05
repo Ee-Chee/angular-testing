@@ -16,11 +16,11 @@ describe('ExampleService', () => {
     httpMock = TestBed.inject(HttpTestingController);
   });
 
-  it('should get last name', () => {
+  it('test1: should get last name', () => {
     expect(service.getLastName()).toEqual('Leng');
   });
 
-  it('should make a HTTP GET request', () => {
+  it('test2: should make a HTTP GET request', () => {
     // HttpTestingController intercepts the request using httpMock.expectOne() and 
     // respond with mocked data using req.flush().
     const testData = [{id: 1, created_at: ''}];
@@ -33,7 +33,7 @@ describe('ExampleService', () => {
   });
 
   
-  it('fake async test example: looks async but is synchronous', fakeAsync(() => {
+  it('test3: fake async test example: looks async but is synchronous', fakeAsync(() => {
     let flag = false;
     setTimeout(() => {
       flag = true;
