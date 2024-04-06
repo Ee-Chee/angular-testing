@@ -6,7 +6,7 @@
 </p>
 <p>
     @for (item of entries; track item.id; let i = $index) {
-        <div>{{i + 1}} : {{ item.id }} : {{item.created_at}}</div>
+        <div class="entry">{{i + 1}} : {{ item.id }} : {{item.created_at}}</div>
       } @empty {
         <div>No entries</div>
       }

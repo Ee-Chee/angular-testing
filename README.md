@@ -9,14 +9,14 @@
 - toBeTrue() - Checks if the returned value is true
 toBeTruthy() - Check if the value, when cast to a boolean, will be a truthy value
 Truthy values are all values that aren't 0, '' (empty string), false, null, NaN, undefined or [] (empty array)*.
-
-## Setup
-- Dependencies are preinstalled as using ng new <project>.
-- In the newer version of angular, karma.config.js is not available (test.ts as well). On terminal, use npx karma init to generate one. Then in angular.json -> test -> "karmaConfig": "karma.conf.js". However, this is unnecessary.
+- End-to-end is used to test the functionality of a software application from start to end by simulating real-world user scenarios and behaviours, consuming live data.
 
 ## Tests
 
-### Unit Testing (isolated)
+### Unit Testing
+- isolated
+- Dependencies are preinstalled as using ng new <project>.
+- In the newer version of angular, karma.config.js is not available (test.ts as well). On terminal, use npx karma init to generate one. Then in angular.json -> test -> "karmaConfig": "karma.conf.js". However, this is unnecessary.
 
 #### Component- form test
 - see home spec -> HomeComponent
@@ -54,9 +54,17 @@ Truthy values are all values that aren't 0, '' (empty string), false, null, NaN,
 #### Test route guard
 - see app spec
 
+### E2E testing
+- Setup: npm install cypress --save-dev, npx cypress open, select e2e testing, select browser.
+In package.json, add script npx cypress open. Cypress supports javascript by default. In order to support typescript => https://docs.cypress.io/guides/tooling/typescript-support, create tsconfig.json in cypress folder. Ng serve first before rerunning npm script for e2e.
+- Alternative preferably setup: ng add @cypress/schematic => https://www.npmjs.com/package/@cypress/schematic. Run ng e2e to start. Easier, no further configuration nor ng serve prior to that. 
+npm scripts => Cypress run - headless, Cypress open - browser (dont use)
+- check spec.cy.ts in cypress folder
+
 ## References
 ng-mocks => https://ng-mocks.sudo.eu/api/MockComponent
 https://jasmine.github.io/tutorials/your_first_suite
 https://codecraft.tv/courses/angular/unit-testing/jasmine-and-karma/
 https://generic-ui.com/blog/mocking-dependencies-in-angular
 https://medium.com/@rijuldahiya/mastering-karma-and-jasmine-in-angular-the-ultimate-guide-e24aaa06515
+https://docs.cypress.io/guides/component-testing/angular/overview
