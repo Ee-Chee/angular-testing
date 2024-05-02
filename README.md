@@ -17,6 +17,15 @@ Truthy values are all values that aren't 0, '' (empty string), false, null, NaN,
 - isolated
 - Dependencies are preinstalled as using ng new <project>.
 - In the newer version of angular, karma.config.js is not available (test.ts as well). On terminal, use npx karma init to generate one. Then in angular.json -> test -> "karmaConfig": "karma.conf.js". However, this is unnecessary.
+- Jasmine spyOn (spied-method): 
+1. returnValue
+return a mock value
+2. callthrough
+- real function is called and executed
+3. fakecall
+- fake call function and modify function body or logic
+https://stackoverflow.com/questions/69708498/jasmine-callthrough-and-callfake
+<spied-method>.toHaveBeenCalledWith(a, b) => passing arguements to the spied function
 
 #### Component- form test
 - see home spec -> HomeComponent
@@ -60,6 +69,13 @@ In package.json, add script npx cypress open. Cypress supports javascript by def
 - Alternative preferably setup: ng add @cypress/schematic => https://www.npmjs.com/package/@cypress/schematic. Run ng e2e to start. Easier, no further configuration nor ng serve prior to that. 
 npm scripts => Cypress run - headless, Cypress open - browser (dont use)
 - check spec.cy.ts in cypress folder
+
+### Test Ngrx Store
+#### Test Selectors, Effects and Reducers
+https://timdeschryver.dev/blog/testing-an-ngrx-project
+
+#### Test Store in component
+https://v7.ngrx.io/guide/store/testing
 
 ## References
 ng-mocks => https://ng-mocks.sudo.eu/api/MockComponent
